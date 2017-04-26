@@ -14,7 +14,7 @@ const server = module.exports = http.createServer(function(req, res) {
     if (req.url.pathname === '/cowsay') {
       bodyParser(req, function(err) {
         if (err) console.error(err);
-        let message = cowsay.say({text: req.body.text});
+        let message = cowsay.say({text: req.body.text, f: 'bong'});
         console.log(req.body);
         res.writeHead(200, {'Content-Type': 'text/plain'});
         res.write(message);
@@ -37,7 +37,7 @@ const server = module.exports = http.createServer(function(req, res) {
     if (req.url.pathname === '/cowsay') {
       bodyParser(req, function(err) {
         if (err) console.error(err);
-        let message = cowsay.say({text: req.body.text});
+        let message = cowsay.say({text: req.body.text, f: 'bong'});
         res.writeHead(200, {'Content-Type': 'text/plain'});
         res.write(message);
         res.end();
